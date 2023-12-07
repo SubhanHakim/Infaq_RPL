@@ -4,6 +4,7 @@ import CardPayments from "../partials/cardPayment"
 
 
 
+
 const Payments = () => {
     return (
         <>
