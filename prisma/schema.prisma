@@ -19,6 +19,13 @@ model informations {
   updateAt DateTime @updatedAt
 }
 
+model Metode {
+  id Int @id @default(autoincrement())
+  name String
+  norek String
+  payment payments[]
+}
+
 model payments {
   id Int @id @default(autoincrement())
   nama String
@@ -27,4 +34,6 @@ model payments {
   bukti String
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
+  metode Metode @relation(fields: [metodeId], references: [id])
+  metodeId Int
 }
