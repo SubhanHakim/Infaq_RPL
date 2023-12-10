@@ -4,10 +4,6 @@ export const metaData = {
     title: "Payments"
 }
 
-
-
-
-
 const PaymentsLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div>

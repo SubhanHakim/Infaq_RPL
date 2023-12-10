@@ -12,6 +12,7 @@ const Donate = ({ metode }: { metode: Metode[] }) => {
     const [jumlah, setJumlah] = useState("")
     const [doa, setDoa] = useState("")
     const [metodes, setMetodes] = useState("")
+    const [bukti, setBukti] = useState("")
 
 
 
@@ -26,12 +27,14 @@ const Donate = ({ metode }: { metode: Metode[] }) => {
             nama: nama,
             jumlah: Number(jumlah),
             doa: doa,
-            metodeId: metodes
+            metodeId: Number(metodes),
+            bukti: bukti
         })
     setNama("")
     setJumlah("")
     setMetodes("")
     setDoa("")
+    setBukti("")
     router.refresh()
     setIsOpen(false)
     }
@@ -59,6 +62,11 @@ const Donate = ({ metode }: { metode: Metode[] }) => {
                             <label className="label font-bold">Doa</label>
                             <input type="text"  value={doa} onChange={(e) => setDoa(e.target.value)} name="" id="" className="input input-bordered" placeholder="Doa" />
                         </div>
+                        <div className="form-control w-full">
+                            <label className="label font-bold">Bukti</label>
+                            <input type="text"  value={bukti} onChange={(e) => setBukti(e.target.value)} name="" id="" className="input input-bordered" placeholder="Bukti" />
+                        </div>
+                        
                         <div className="form-control w-full">
                             <label className="label font-bold">Metode</label>
                             <select value={metodes} onChange={(e) => setMetodes(e.target.value)} className="select select-bordered">
